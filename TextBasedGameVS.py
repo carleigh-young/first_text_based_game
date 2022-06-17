@@ -1,8 +1,5 @@
 # Carleigh Young
 
-# warning about prior_room not relevant as movement in map doesn't allow prior room to be undefined prior to use
-# invalid escape sequence errors due to ASCII art
-# print statements look a bit funky to eliminate soft warning about line length
 # all ascii art courtesy of https://ascii.co.uk/art/school
 
 import time
@@ -307,6 +304,9 @@ def main():
 
     # command action responses - non directional commands
     while playing.lower() == 'yes':
+        while command.lower() == '':
+            print('That is not a valid command. Please try again. Type "help" if you need it.')
+            command = lower_command()
         if command.lower() == 'view student file':
             show_inventory()
             command = lower_command()
